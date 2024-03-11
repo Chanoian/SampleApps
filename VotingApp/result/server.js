@@ -18,7 +18,7 @@ io.on('connection', function (socket) {
 });
 
 var pool = new Pool({
-  connectionString: 'postgres://user:pass@db/postgres'
+  connectionString: 'postgres://user:pass@db/db'
 });
 
 async.retry(
