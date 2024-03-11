@@ -15,8 +15,8 @@ spec:
         app: vote
     spec:
       containers:
-        - image: quay.io/achanoia/voting_app:latest 
-          name: vote
-          ports:
+      - image: quay.io/achanoia/voting_app:latest 
+        name: vote
+        ports:
         - containerPort: 8080
           name: vote
