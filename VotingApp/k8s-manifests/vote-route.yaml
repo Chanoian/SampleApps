@@ -1,0 +1,16 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    openshift.io/host.generated: "true"
+  name: vote-route
+  namespace: voting-app
+spec:
+  host: vote-route-voting-app.apps.homelabsno.mondeo
+  tls:
+    termination: reencrypt
+  to:
+    kind: Service
+    name: vote
+    weight: 100
+  wildcardPolicy: None
