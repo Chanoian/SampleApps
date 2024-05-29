@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
@@ -14,3 +15,16 @@ spec:
     name: vote
     weight: 100
   wildcardPolicy: None
+=======
+# Create a secure connection to the proxy via a route
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: proxy
+spec:
+  to:
+    kind: Service
+    name: proxy
+  tls:
+    termination: Reencrypt
+>>>>>>> cc13fc2afd676bfe698dd613170943e9836f1305
