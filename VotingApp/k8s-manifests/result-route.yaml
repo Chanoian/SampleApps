@@ -1,17 +1,21 @@
 kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
-  name: vote
+  name: result
   namespace: voting
   labels:
-    app: vote
+    app: result
     app.kubernetes.io/instance: argocd-app-sample-apps
+  annotations:
+    openshift.io/host.generated: 'true'
 spec:
-  host: vote-voting.apps.homelab.mondeo.com
+  host: result-voting.apps.homelab.mondeo.com
   to:
     kind: Service
-    name: vote
+    name: result
     weight: 100
   port:
-    targetPort: vote-service
+    targetPort: result-service
   wildcardPolicy: None
+  tls: null
+
