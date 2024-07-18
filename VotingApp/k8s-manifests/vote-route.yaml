@@ -4,7 +4,7 @@ metadata:
   annotations:
     openshift.io/host.generated: "true"
   name: vote-route
-  namespace: voting-app
+  namespace: voting
 spec:
   host: vote-route-voting-app.apps.homelabsno.mondeo
   tls:
