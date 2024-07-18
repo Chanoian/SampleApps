@@ -17,5 +17,4 @@ spec:
   port:
     targetPort: result-service
   wildcardPolicy: None
-  tls: null
 
