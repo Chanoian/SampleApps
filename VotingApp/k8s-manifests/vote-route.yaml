@@ -6,7 +6,7 @@ metadata:
   name: vote-route
   namespace: voting
 spec:
-  host: vote-route-voting-app.apps.homelabsno.mondeo
+  host: vote-route-voting-app.apps.homelab.mondeo.com
   tls:
     termination: reencrypt
   to:
