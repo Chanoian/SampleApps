@@ -7,7 +7,7 @@ metadata:
     app: vote
     app.kubernetes.io/instance: argocd-app-sample-apps
 spec:
-  host: vote-voting.apps.homelab.mondeo.com
+  host: vote-voting.apps.sno.homelab.lab
   to:
     kind: Service
     name: vote

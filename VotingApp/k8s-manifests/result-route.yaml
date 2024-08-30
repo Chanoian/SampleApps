@@ -9,7 +9,7 @@ metadata:
   annotations:
     openshift.io/host.generated: 'true'
 spec:
-  host: result-voting.apps.homelab.mondeo.com
+  host: result-voting.apps.sno.homelab.lab
   to:
     kind: Service
     name: result
