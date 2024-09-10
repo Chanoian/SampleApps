@@ -1,0 +1,15 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: gofiber
+  namespace: sampleapps
+  labels:
+    app: gofiber
+spec:
+  path: /devices
+  to:
+    kind: Service
+    name: gofiber
+    weight: 100
+  port:
+    targetPort: gofiber-service

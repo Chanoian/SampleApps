@@ -1,0 +1,19 @@
+---
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: goprometheus
+  namespace: sampleapps 
+  labels:
+    prometheus: main
+spec:
+  namespaceSelector:
+    matchNames:
+      - sampleapps
+  selector:
+    matchLabels:
+      app: goprometheus 
+  podMetricsEndpoints:
+    - port: http-metrics
+      path: /metrics
+

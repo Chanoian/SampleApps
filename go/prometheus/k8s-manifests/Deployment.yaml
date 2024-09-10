@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: sampleapps 
+  name: goprometheus
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: goprometheus
+  template:
+    metadata:
+      labels:
+        app: goprometheus
+    spec:
+      containers:
+      - image: quay.io/achanoia/sampleapps/go-prometheus:latest 
+        name: goprometheus
+        ports:
+        - containerPort: 8080
+          name: http
+        - containerPort: 8081
+          name: http-metrics

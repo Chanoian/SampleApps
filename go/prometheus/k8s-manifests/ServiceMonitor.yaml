@@ -1,0 +1,16 @@
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: prometheus-sm
+  namespace: sampleapps 
+spec:
+  namespaceSelector:
+    matchNames:
+      - sampleapps
+  selector:
+    matchLabels:
+      prometheus: go-prometheus 
+  endpoints:
+    - port: http-metrics
+      path: /metrics

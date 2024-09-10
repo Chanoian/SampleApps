@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: sampleapps 
+  name: gofiber
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gofiber
+  template:
+    metadata:
+      labels:
+        app: gofiber
+    spec:
+      containers:
+      - image: quay.io/achanoia/sampleapps/go-fiber:latest 
+        name: gofiber
+        ports:
+        - containerPort: 8080
+          name: http
+        - containerPort: 8081
+          name: http-metrics
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: http
+          periodSeconds: 1
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: http
+          periodSeconds: 1
