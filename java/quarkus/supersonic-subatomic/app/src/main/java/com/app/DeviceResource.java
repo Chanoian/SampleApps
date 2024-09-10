@@ -1,4 +1,4 @@
-package com.antonputra;
+package com.app;
 
 import java.util.Collections;
 import java.util.LinkedHashMap;
@@ -6,8 +6,6 @@ import java.util.Set;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.core.MediaType;
 
 @Path("/api/devices")
 public class DeviceResource {

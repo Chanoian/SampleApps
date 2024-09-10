@@ -1,4 +1,4 @@
-package com.antonputra;
+package com.app;
 
 public class Device {
 
